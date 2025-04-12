@@ -37,11 +37,11 @@ const WelcomeScreen: React.FC = () => {
         <div className="bg-gray-100 rounded-lg p-4 mb-6">
           <div className="flex justify-between mb-2">
             <span className="font-medium">Monthly Income:</span>
-            <span className="font-bold">${profile?.monthlyIncome.toFixed(2)}</span>
+            <span className="font-bold">₹{profile?.monthlyIncome.toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
             <span className="font-medium">Monthly Budget:</span>
-            <span className="font-bold">${profile?.monthlyBudget.toFixed(2)}</span>
+            <span className="font-bold">₹{profile?.monthlyBudget.toFixed(2)}</span>
           </div>
         </div>
       </CardContent>

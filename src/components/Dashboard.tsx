@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -99,10 +100,10 @@ const Dashboard: React.FC = () => {
             <div className="bg-gray-100 rounded-lg p-4">
               <div className="text-sm text-muted-foreground mb-1">Usable Amount (80%)</div>
               <div className="text-2xl font-bold text-budget-primary">
-                ${currentDailyBudget.usableAmount.toFixed(2)}
+                ₹{currentDailyBudget.usableAmount.toFixed(2)}
               </div>
               <div className="text-sm text-muted-foreground mt-1">
-                Used: ${currentDailyBudget.spent.toFixed(2)} 
+                Used: ₹{currentDailyBudget.spent.toFixed(2)} 
                 ({calculateUsedPercentage().toFixed(0)}%)
               </div>
               <div className="budget-progress mt-2">
@@ -116,16 +117,16 @@ const Dashboard: React.FC = () => {
             <div className="bg-gray-100 rounded-lg p-4">
               <div className="text-sm text-muted-foreground mb-1">Buffer Amount (20%)</div>
               <div className="text-2xl font-bold text-budget-accent">
-                ${currentDailyBudget.bufferAmount.toFixed(2)}
+                ₹{currentDailyBudget.bufferAmount.toFixed(2)}
               </div>
               <div className="text-sm mt-3">
                 <div className="flex justify-between items-center">
                   <span>Total Budget:</span>
-                  <span className="font-medium">${currentDailyBudget.totalAmount.toFixed(2)}</span>
+                  <span className="font-medium">₹{currentDailyBudget.totalAmount.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between items-center mt-1">
                   <span>Total Savings:</span>
-                  <span className="font-medium">${totalSavings.toFixed(2)}</span>
+                  <span className="font-medium">₹{totalSavings.toFixed(2)}</span>
                 </div>
               </div>
             </div>
@@ -230,7 +231,7 @@ const Dashboard: React.FC = () => {
                     <div key={category} className="bg-gray-100 rounded-lg p-3">
                       <div className="flex justify-between items-center mb-1">
                         <span className="font-medium capitalize">{category}</span>
-                        <span className="text-sm">${remaining.toFixed(2)} left</span>
+                        <span className="text-sm">₹{remaining.toFixed(2)} left</span>
                       </div>
                       <div className="budget-progress">
                         <div 
@@ -241,8 +242,8 @@ const Dashboard: React.FC = () => {
                         ></div>
                       </div>
                       <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                        <span>Budget: ${amount.toFixed(2)}</span>
-                        <span>Used: ${spent.toFixed(2)}</span>
+                        <span>Budget: ₹{amount.toFixed(2)}</span>
+                        <span>Used: ₹{spent.toFixed(2)}</span>
                       </div>
                     </div>
                   );

@@ -69,7 +69,7 @@ const SpendingBreakdown: React.FC<SpendingBreakdownProps> = ({ categories, trans
                 ))}
               </Pie>
               <Tooltip 
-                formatter={(value: number) => [`$${value.toFixed(2)}`, 'Amount']}
+                formatter={(value: number) => [`₹${value.toFixed(2)}`, 'Amount']}
               />
               <Legend />
             </PieChart>
@@ -80,7 +80,7 @@ const SpendingBreakdown: React.FC<SpendingBreakdownProps> = ({ categories, trans
       <div className="space-y-2">
         <div className="bg-gray-100 rounded-lg p-3 text-center">
           <div className="text-sm text-muted-foreground">Total Spent</div>
-          <div className="text-xl font-bold">${totalSpent.toFixed(2)}</div>
+          <div className="text-xl font-bold">₹{totalSpent.toFixed(2)}</div>
         </div>
         
         {data.map((item, index) => (
@@ -92,7 +92,7 @@ const SpendingBreakdown: React.FC<SpendingBreakdownProps> = ({ categories, trans
               ></div>
               <span>{item.name}</span>
             </div>
-            <div className="font-medium">${item.value.toFixed(2)}</div>
+            <div className="font-medium">₹{item.value.toFixed(2)}</div>
           </div>
         ))}
       </div>

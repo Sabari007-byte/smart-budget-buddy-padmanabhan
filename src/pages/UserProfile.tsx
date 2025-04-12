@@ -130,7 +130,7 @@ const UserProfile: React.FC = () => {
                       <DollarSign className="h-5 w-5 text-budget-primary mr-2" />
                       <div>
                         <div className="text-sm text-muted-foreground">Monthly Income</div>
-                        <div className="font-medium">${profile.monthlyIncome.toFixed(2)}</div>
+                        <div className="font-medium">₹{profile.monthlyIncome.toFixed(2)}</div>
                       </div>
                     </div>
                     
@@ -138,7 +138,7 @@ const UserProfile: React.FC = () => {
                       <DollarSign className="h-5 w-5 text-budget-primary mr-2" />
                       <div>
                         <div className="text-sm text-muted-foreground">Monthly Budget</div>
-                        <div className="font-medium">${profile.monthlyBudget.toFixed(2)}</div>
+                        <div className="font-medium">₹{profile.monthlyBudget.toFixed(2)}</div>
                       </div>
                     </div>
                   </div>

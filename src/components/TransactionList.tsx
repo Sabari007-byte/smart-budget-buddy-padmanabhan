@@ -126,7 +126,7 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
                       </div>
                     </div>
                     <div className={`font-bold ${transaction.useBuffer ? 'text-amber-600' : 'text-gray-700'}`}>
-                      -${transaction.amount.toFixed(2)}
+                      -₹{transaction.amount.toFixed(2)}
                     </div>
                   </div>
                 </HoverCardTrigger>
@@ -135,7 +135,7 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions }) => {
                     <h4 className="font-semibold">Transaction Details</h4>
                     <div className="grid grid-cols-2 gap-1 text-sm">
                       <span className="text-muted-foreground">Amount:</span>
-                      <span className="font-medium">${transaction.amount.toFixed(2)}</span>
+                      <span className="font-medium">₹{transaction.amount.toFixed(2)}</span>
                       
                       <span className="text-muted-foreground">Category:</span>
                       <span className="font-medium capitalize">{transaction.category}</span>

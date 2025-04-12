@@ -59,7 +59,7 @@ const WalletSetup: React.FC = () => {
           <div className="space-y-2">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <span className="text-gray-500 sm:text-sm">$</span>
+                <span className="text-gray-500 sm:text-sm">₹</span>
               </div>
               <Input
                 type="number"
@@ -74,11 +74,11 @@ const WalletSetup: React.FC = () => {
           <div className="bg-gray-100 rounded-lg p-4 mb-2">
             <div className="flex justify-between mb-2">
               <span className="font-medium">Monthly Budget:</span>
-              <span className="font-bold">${profile?.monthlyBudget.toFixed(2)}</span>
+              <span className="font-bold">₹{profile?.monthlyBudget.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
               <span className="font-medium">Daily Budget (approx):</span>
-              <span className="font-bold">${((profile?.monthlyBudget || 0) / 30).toFixed(2)}</span>
+              <span className="font-bold">₹{((profile?.monthlyBudget || 0) / 30).toFixed(2)}</span>
             </div>
           </div>
           
