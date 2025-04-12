@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { UserProvider, useUser } from '@/contexts/UserContext';
+import { useUser } from '@/contexts/UserContext';
 import AuthForm from '@/components/AuthForm';
 import ProfileSetup from '@/components/ProfileSetup';
 import WelcomeScreen from '@/components/WelcomeScreen';
@@ -34,11 +34,9 @@ const AppContent = () => {
 const Index = () => {
   return (
     <div className="min-h-screen py-10 px-4 bg-gray-50">
-      <UserProvider>
-        <div className="w-full max-w-4xl mx-auto">
-          <AppContent />
-        </div>
-      </UserProvider>
+      <div className="w-full max-w-4xl mx-auto">
+        <AppContent />
+      </div>
     </div>
   );
 };
