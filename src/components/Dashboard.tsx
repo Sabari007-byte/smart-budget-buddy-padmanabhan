@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUser, SpendingCategory, Transaction } from '@/contexts/UserContext';
-import { Home, PlusCircle, ChevronDown, ArrowUpCircle, ArrowDownCircle, PieChart, Calendar, Clock, Receipt } from 'lucide-react';
+import { Home, PlusCircle, ChevronDown, ArrowUpCircle, ArrowDownCircle, PieChart, Calendar, Clock, Receipt, User } from 'lucide-react';
 import TransactionForm from './TransactionForm';
 import SpendingBreakdown from './SpendingBreakdown';
 import TransactionList from './TransactionList';
@@ -74,9 +74,16 @@ const Dashboard: React.FC = () => {
           <Home className="h-8 w-8 text-budget-primary mr-2" />
           <h1 className="text-2xl font-bold">Smart Budget</h1>
         </div>
-        <div className="text-right">
-          <div className="text-sm text-muted-foreground">{getTodayDate()}</div>
-          <div className="font-medium">Hello, {profile?.name}</div>
+        <div className="text-right flex items-center gap-3">
+          <div>
+            <div className="text-sm text-muted-foreground">{getTodayDate()}</div>
+            <div className="font-medium">Hello, {profile?.name}</div>
+          </div>
+          <Link to="/profile">
+            <Button variant="ghost" size="icon" className="rounded-full">
+              <User className="h-5 w-5 text-budget-primary" />
+            </Button>
+          </Link>
         </div>
       </div>
       
