@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUser, SpendingCategory, Transaction } from '@/contexts/UserContext';
-import { Home, PlusCircle, ChevronDown, ArrowUpCircle, ArrowDownCircle, PieChart, Calendar, Clock } from 'lucide-react';
+import { Home, PlusCircle, ChevronDown, ArrowUpCircle, ArrowDownCircle, PieChart, Calendar, Clock, Receipt } from 'lucide-react';
 import TransactionForm from './TransactionForm';
 import SpendingBreakdown from './SpendingBreakdown';
 import TransactionList from './TransactionList';
@@ -19,6 +19,7 @@ const Dashboard: React.FC = () => {
   } = useUser();
   
   const [showTransactionForm, setShowTransactionForm] = useState(false);
+  const navigate = useNavigate();
   
   const getTodayDate = () => {
     const options: Intl.DateTimeFormatOptions = { 
@@ -177,11 +178,22 @@ const Dashboard: React.FC = () => {
         
         <TabsContent value="transactions" className="animate-slide-up">
           <Card>
-            <CardHeader>
-              <CardTitle>Today's Transactions</CardTitle>
-              <CardDescription>
-                A list of your expenses for today
-              </CardDescription>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <div>
+                <CardTitle>Today's Transactions</CardTitle>
+                <CardDescription>
+                  A list of your expenses for today
+                </CardDescription>
+              </div>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate('/transactions')}
+                className="text-xs"
+              >
+                <Receipt className="h-3 w-3 mr-1" />
+                View All
+              </Button>
             </CardHeader>
             <CardContent>
               <TransactionList transactions={currentDailyBudget.transactions} />
